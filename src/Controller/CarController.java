@@ -15,17 +15,21 @@ import java.util.ArrayList;
  */
 
 public class CarController {
-    SimulationWorld simulationWorld;
 
     private CarView frame;
-    // The delay (ms) corresponds to 20 updates a sec (hz)
-    private final int delay = 50;
 
-    // The timer is started with an listener (see below) that executes the statements
-    // each step between delays.
+    /**
+     * The delay (ms) corresponds to 20 updates a sec (hz)
+     */
+    private final int delay = 50;
+    /**
+     * The timer is started with an listener (see below) that executes the statements
+     *  each step between delays.
+     */
     private Timer timer = new Timer(delay, new TimerListener());
 
     private ArrayList<IVehicle> vehicles;
+
     public CarController (SimulationWorld simulationWorld){
         this.vehicles = simulationWorld.getVehicles();
     }
@@ -37,9 +41,9 @@ public class CarController {
     public void setFrame(CarView frame) {
         this.frame = frame;
     }
-    /* Each step the TimerListener moves all the cars in the list and tells the
-     * view to update its images. Change this method to your needs.
-     * */
+    /** Each step the TimerListener moves all the cars in the list and tells the
+     * view to update its images.
+     */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             for (IVehicle vehicle : vehicles) {

@@ -27,6 +27,10 @@ public class DrawPanel extends JPanel{
         this.populateImageMap();
     }
 
+    /**
+     * Generic method to pair the vehicles with their photo
+     */
+
     private void populateImageMap() {
         for(IVehicle vehicle: vehicleList)
         try {
@@ -38,10 +42,15 @@ public class DrawPanel extends JPanel{
     }
 
     // This method is called each time the panel updates/refreshes/repaints itself
-    // TODO: Change to suit your needs.
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        removeAll();
+        revalidate();
+        int w= this.getWidth();
+        int h = this.getHeight();
+        this.setSize(w + 1, h + 1);
+        this.setSize(w,h);
         for (IVehicle vehicle : vehicleList) {
             g.drawImage(imageMap.get(vehicle.getModelName()), (int) vehicle.getX(), (int) vehicle.getY(), null); // see javadoc for more info on the parameters
             // g.drawImage(carImage, getX(), getY(), null); // see javadoc for more info on the parameters

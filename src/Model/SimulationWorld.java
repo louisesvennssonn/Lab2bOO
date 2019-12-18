@@ -84,7 +84,7 @@ public class SimulationWorld {
         if (vehicles.size() > 0) {
             vehicles.remove(vehicles.size() - 1);
         }
-        if (vehicles.size() == 0){
+        else if (vehicles.size() == 0){
             throw new IllegalArgumentException("Can't remove vehicle when list is empty");
         }
 

@@ -1,10 +1,8 @@
 import Controller.CarController;
-import Model.IVehicle;
 import Model.SimulationWorld;
 import View.CarView;
 import View.SpeedView;
 
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {

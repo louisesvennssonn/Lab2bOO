@@ -1,8 +1,6 @@
 package View;
 
-import Model.IVehicle;
 import Model.SimulationWorld;
-import Model.Vehicle;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -17,7 +15,6 @@ import java.awt.event.ActionListener;
  * It initializes with being center on the screen and attaching it's controller in it's state.
  * It communicates with the Controller by calling methods of it when an action fires of in
  * each of it's components.
- * TODO: Write more actionListeners and wire the rest of the buttons
  **/
 
 public class CarView extends JFrame{
@@ -49,12 +46,12 @@ public class CarView extends JFrame{
         this.speedView = new SpeedView(simulationWorld);
         initComponents(framename, simulationWorld);
     }
+    // Method to avoid implementing of Draw Panel in Car Controller
     public void repaint(){
         drawPanel.repaint();
     }
 
     // Sets everything in place and fits everything
-    // TODO: Take a good look and make sure you understand how these methods and components work
     private void initComponents(String title, SimulationWorld simulationWorld) {
 
         this.setTitle(title);

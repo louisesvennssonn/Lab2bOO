@@ -1,15 +1,13 @@
 package View;
-
-import Model.Car;
 import Model.IVehicle;
 import Model.SimulationWorld;
-
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
+/**
+ * Class to create a speed view for each vehicle in our list
+ */
 public class SpeedView extends JPanel {
-
     SimulationWorld simulationWorld;
     JLabel [] labels  = new JLabel [10];
 
@@ -23,6 +21,11 @@ public class SpeedView extends JPanel {
         }
         match();
     }
+
+    /**
+     * Method with an array to pair the vehicle's speed and model name
+     * Uses a for loop to reset the labels as well
+     */
     public void match() {
         for(int i = 0; i< labels.length; i++){
             labels[i].setText("");
@@ -32,7 +35,6 @@ public class SpeedView extends JPanel {
             String model = vehicle.getModelName();
             double speed = vehicle.getCurrentSpeed();
             labels [i].setText(model + " " + speed);
-
         }
     }
 }
